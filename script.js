@@ -12,13 +12,16 @@ const msgErro = document.getElementById('js-error')
 btnBuscarCep.addEventListener('click', () => {
     if(inputCep.value != ""){
 
-        fetch(`https://viacep.com.br/ws/${inputCep.value}/json/`)
-        .then(Response => Response.json())
-        .then(json => {
-            inputdadosBairro.value = json.bairro;
-            inputdadosCep.value = json.cep;
-            inputdadosLogradouro.value = json.logradouro;
-            inputdadosCidade.value = json.localidade;
+        axios({
+            method: 'GET',
+            url: `https://viacep.com.br/ws/${inputCep.value}/json/`
+        })
+        .then(response => {
+            let data = response.data;
+            inputdadosBairro.value = data.bairro;
+            inputdadosCep.value = data.cep;
+            inputdadosLogradouro.value = data.logradouro;
+            inputdadosCidade.value = data.localidade;
         });
 
         msgErro.style.display ='none';
