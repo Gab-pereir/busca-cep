@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Consumindo uma API de CEP</title>
+</head>
+<body>
+    <div class="area-busa">
+        <input type="text" id="js-input-cep">
+        <button id="js-btn-buscar-cep">Buscar CEP</button>
+    </div>
+
+    <p class="msg-error" id="js-error">Preencha o campo corretamente</p>
+
+    <div class="todos-dados" id="js-dados">
+        <h2>Dados do CEP</h2>
+        <div>
+            <label for="">Bairro</label>
+            <input type="text" id="js-input-dados-bairro">
+            <label for="">CEP</label>
+            <input type="text" id="js-input-dados-cep">
+            <label for="">Logradouro</label>
+            <input type="text" id="js-input-dados-logradouro">
+            <label for="">Cidade</label>
+            <input type="text" id="js-input-dados-cidade">
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
